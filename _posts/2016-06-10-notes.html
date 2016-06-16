@@ -1,0 +1,134 @@
+---
+layout: post
+title: First notebook entry
+description: This is the first (official) entry into my research notebook.
+tags: scenario-tree area-freedom
+categories: biosecurity
+comments: true
+---
+
+<p>
+This is the first entry I have transformed into a webpage from my research notebook.
+</p>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Tasks</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="todo TODO">TODO</span> Read through <a href="http://mc-stan.org/documentation/case-studies/radon.html">this case study</a></h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-10 Fri 10:21&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li>The source can be found on <a href="https://github.com/fonnesbeck/stan_workshop_2016">github</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Readings</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+</div><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">Documenting disease freedom in swine by combination of surveillance programmes using information from multiple non-survey-based sources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="scenario">scenario</span>&#xa0;<span class="tree">tree</span></span></h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-10 Fri 10:46&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li>Report for International EpiLab</li>
+<li>Provides case studies on scenario tree modelling, so a good place to start reading in this area, even though it's a little old (2003)</li>
+<li>The ultimate goal is to estimate the <i>surveillance process's sensitivity</i>
+<ul class="org-ul">
+<li>this is the probability of detecting an infected unit, given the area is infected (under some design prevalence)</li>
+<li>\(\Pr\left(\geq 1\text{ infected unit }\big|\text{ country infected}\right)\)</li>
+</ul></li>
+<li>If there is a positive (confirmed) test on a unit, then clearly the area is not free from disease!</li>
+<li>Layman's summary for scenario tree:
+<ul class="org-ul">
+<li>Combines probabilities in each step of the surveillance system to output an overall probability that the surveillance system will detect the disease if present</li>
+</ul></li>
+<li>For a scenario tree, they define conditional probabilities by considering preconditions
+<ul class="org-ul">
+<li>That is, all parent nodes to the current node</li>
+</ul></li>
+<li>Confidence = overall sensitivity</li>
+<li>Use hypothesis testing as a framework
+<ul class="org-ul">
+<li>Hence the <i>design prevalence</i><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> as the <i>null</i> hypothesis</li>
+<li>We then compare output based on the assumed design prevalence</li>
+</ul></li>
+<li>Suggest in S2.3.3 that Bayesian probabilities can be used at the end of modelling to produce a probability of freedom from disease
+<ul class="org-ul">
+<li>As opposed to the probability of detection as above</li>
+</ul></li>
+<li>All nodes in a scenario tree are <i>conditional</i> on all parent nodes</li>
+<li>Unit of analysis is important
+<ul class="org-ul">
+<li><a id="orgtarget1"></a>What happens with variable size units? E.g. crops or herds?</li>
+</ul></li>
+<li>Ordering of nodes is not important
+<ul class="org-ul">
+<li>as opposed to graphical models?</li>
+<li>it does affect the conditional probabilities though, so keeps them easier to specify</li>
+</ul></li>
+<li>Factors to include are those that influence the probability of infection or detection
+<ul class="org-ul">
+<li>So in response to <a href="#orgtarget1">above</a>, variable sizing would need to be included somehow</li>
+<li>This would then suggest for a continuous measure like crop size (e.g. in Ha), it would be better to go to a more flexible modelling tool that allows a continuous node</li>
+<li>They suggest with the note, capturing variability</li>
+</ul></li>
+<li>Recommend stochastic modelling, with each branch probability having uncertainty in the form of an appropriate probability distribution
+<ul class="org-ul">
+<li>How that stochastic modelling is done is what I'm interested in mainly</li>
+</ul></li>
+<li>Branch probabilities
+<ul class="org-ul">
+<li>They say you need to use data!</li>
+<li>Of course, but that's the hard part</li>
+<li>Need to use data from similar diseases or geographies for a large part of this</li>
+<li>Otherwise, expert opinion, which the go in to</li>
+</ul></li>
+<li>Surveillance systems with incomplete coverage (e.g. targeted surveillance) require two model fits
+<ol class="org-ol">
+<li>That using the actual data using design prevalence</li>
+<li>One using a <i>representative</i> surveillance process, which uses estimated prevalence, and simulated data/units
+<ul class="org-ul">
+<li>With the same number of units as in the actual data</li>
+</ul></li>
+</ol></li>
+<li>Estimating the probability of freedom from infection is then easily done using Bayes theorem, and law of total probability</li>
+<li>Sensitivity analysis should be performed
+<ul class="org-ul">
+<li>But doesn't say how in S2.5.2.3.8</li>
+</ul></li>
+<li>Provides a brief excursion into expert opinion
+<ul class="org-ul">
+<li>Including the gathering and analysis of such data to provide node probability distributions</li>
+</ul></li>
+<li>Doesn't really go in to how the probabilities are traced through the tree
+<ul class="org-ul">
+<li>I'm wondering whether this is the process:
+<ol class="org-ol">
+<li>For any of the nodes that have a distribution attached, make a draw from them</li>
+<li>Calculate the final node probabilities (for positive, i.e. infected animal) by multiplying together all of the conditional probabilities that trace to that node</li>
+<li>Sum all these probabilities to produce the probability of detecting a positive animal</li>
+<li>Repeat <code>nreps</code> times to give a distribution of estimates for the probability of detecting a positive animal</li>
+<li>Calculate required sensitivities</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<i>Design</i> refers to the fact that this prevalence is a part of the design of the model/system and is not related to any actual prevalence within the system.
+</p></div></div>
+
+
+</div>
+</div>
