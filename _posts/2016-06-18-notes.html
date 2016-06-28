@@ -1,0 +1,79 @@
+---
+layout: post
+title: Research notes
+description: Notes and readings
+tags: graphics visualisation
+categories: generic
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Readings</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Statistician Heal Thyself: Have We Lost the Plot?</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-28 Tue 11:35&gt;</span></span>
+</p>
+
+<p>
+Gordon, I., &amp; Finch, S. (2015). <a href="http://www.tandfonline.com/doi/full/10.1080/10618600.2014.989324">Statistician Heal Thyself: Have We Lost the Plot?</a> Journal of Computational and Graphical Statistics: A Joint Publication of American Statistical Association, Institute of Mathematical Statistics, Interface Foundation of North America, 24(4), 1210–1229.
+</p>
+
+<ul class="org-ul">
+<li>this is an article about graphics in science and statistics journals</li>
+<li><p>
+I think graphical display of data is much easier to parse than tabled data
+</p>
+<ul class="org-ul">
+<li>but many (applied) journals specify a maximum of figures per article!</li>
+</ul>
+<blockquote>
+<p>
+a high quality graph should be able to be interpreted without elaboration
+</p>
+</blockquote></li>
+<li>Figure 1 shows a cluttered display
+<ul class="org-ul">
+<li>I think there's a ggplot2 function to push labels apart</li>
+<li>yes, here it is: <a href="https://github.com/slowkow/ggrepel">ggrepel</a></li>
+</ul></li>
+<li>Figure 2 provides a redesign
+<ul class="org-ul">
+<li>basically a small multiples plot</li>
+<li>this is an improvement, but if the relationship is not monotone, then this figure would look a bit messy</li>
+</ul></li>
+<li>Figure 3 provides a scatterplot alternative
+<ul class="org-ul">
+<li>the authors suggest that it is easy to see that average lifespan increases with education, but I find this difficult</li>
+<li>I can more easily see the decrease in lifespan variation with increasing education though</li>
+</ul></li>
+<li><p>
+Principle 3:
+</p>
+<blockquote>
+<p>
+Use good alignment on a common scale for quantities to be compared.
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>pie charts and stacked bar charts fail this principle
+<ul class="org-ul">
+<li>stacked bar charts because only one category (the bottom one) is aligned against the common axis</li>
+</ul></li>
+<li>panel plots also fail this?</li>
+</ul></li>
+<li>The figures in the article themselves are fuzzy
+<ul class="org-ul">
+<li>perhaps the authors could have taken their own advice?!</li>
+</ul></li>
+<li>Detection was found to be the main issue
+<ul class="org-ul">
+<li>This refers to how we find out about features of the graph</li>
+</ul></li>
+<li>They provide a checklist at the end of the article for those producing graphics</li>
+</ul>
+</div>
+</div>
+</div>
