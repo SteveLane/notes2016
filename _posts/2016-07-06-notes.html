@@ -1,0 +1,58 @@
+---
+layout: post
+title: Macro's for org-mode images
+description: Daily notes
+tags: emacs org-mode
+categories:
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Notes</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Export dependent image extensions</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-07-06 Wed 12:52&gt;</span></span>
+</p>
+
+<p>
+I use emacs <a href="http://orgmode.org/">org-mode</a> to prepare documents, presentations etc. Orgmode+babel allows for literate programming, e.g. by including R script within the document itself. Other examples of such documents are .Rnw documents that combine latex and R (via knitr) or .Rmd documents that combine markdown and R (again via knitr)<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<p>
+Sometimes, I'll write an <code>org</code> document that I want to convert into both html and pdf formats. This is fine, until it comes to images. I prefer svg images for including into html, and of course \(\LaTeX\) requires (prefers) pdf images for inclusion. Creating the two formats is easy; making extension choice depending on output format was a little more tricky.
+</p>
+
+<p>
+Enter macros.
+</p>
+
+<p>
+Macros are simply text snippets that contain arguments. When referenced, macros are expanded with their arguments in place. Further, macros can contain <code>lisp</code>, so that you can do all sorts of cool trickery.
+</p>
+
+<p>
+Now, to my example, for easy image insertion, dependent on output format. It's simply a matter of defining an appropriate macro, that when referenced will expand itself appropriately. You can see the code and usage in the gist below. If exporting to html, the macro will expand to <code>fig-name.svg</code>, if pdf, it will expand to <code>fig-name.pdf</code>.
+</p>
+
+<script src="https://gist.github.com/SteveLane/2149da48838e14db4a6871254f1c8c78.js"></script>
+
+<p>
+See the <a href="http://orgmode.org/manual/Macro-replacement.html">org-mode manual</a> for more details on macros, as well as some pre-defined macros, e.g. for inserting the author and date.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h3 class="footnotes">Footnotes: </h3>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+I used markdown (and Rmarkdown) for a little while, however I still don't think they're flexible enough for cross-referencing figures etc. Plus, org-mode has some extra goodies for note-taking, tagging and scheduling that I like.
+</p></div></div>
+
+
+</div>
+</div>
