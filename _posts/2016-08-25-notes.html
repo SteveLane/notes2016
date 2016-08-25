@@ -1,0 +1,54 @@
+---
+layout: post
+title: Research notes
+description: I just read this article and really enjoyed it
+tags: biosecurity invasives MCMC
+categories: biosecurity
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Readings</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Pathway-level biosecurity</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-08-25 Thu 09:19&gt;</span></span>
+</p>
+
+<p>
+García-Díaz, P., Ross, J. V., Woolnough, A. P., &amp; Cassey, P. (2016). <i>Managing the risk of wildlife disease introduction: pathway-level biosecurity for preventing the introduction of alien ranaviruses</i>. The Journal of Applied Ecology. <a href="http://doi.org/10.1111/1365-2664.12749">http://doi.org/10.1111/1365-2664.12749</a>
+</p>
+
+<p>
+This paper provides a really interesting way of modelling the effect of various biosecurity activities on the introduction of ranaviruses, particularly into Australia. Figure 1 describes their whole modelling approach really nicely; rather than a flowchart, the authors present a sequence of nested circles, each representing various stages where biosecurity activities are in place. The outer ring denotes the whole pool of vectors (amphibians) for the virus, which breaks the inner rings when the sneaky buggers get through. It is very clear.
+</p>
+
+<p>
+The model the authors use provides a nice description of this process; it's essentially a chain of arrivals. They have a negative binomial model for the number of amphibians arriving in a state at time t, which depends on human traffic arriving at that state. The rest of the models specify the number of detections: at the border, and post-border detcetions. Finally, they model the number of amphibians that are not detected by either border or post-border biosecurity activities. These are the blighters that may carry disease into established/native populations.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Notes</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+</div><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">state-space models</h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-08-25 Thu 16:21&gt;</span></span>
+</p>
+
+<ul class="org-ul">
+<li>I've spent some time stuffing around trying to shoehorn some state-space models into <a href="http://mc-stan.org/interfaces/rstan">Rstan</a> for sampling, but stan doesn't sample discrete parameters</li>
+<li>Looks like the best way is to move to jags
+<ul class="org-ul">
+<li>I think I'll look at <a href="http://mcmc-jags.sourceforge.net/">rjags</a> (naturally)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
