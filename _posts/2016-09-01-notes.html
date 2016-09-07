@@ -1,0 +1,69 @@
+---
+layout: post
+title: Species-fragmented area relationship
+description: Paper from QAECO reading group
+tags: biodiversity
+categories: ecology
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Readings</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Species-fragmented area relationship</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-01 Thu 07:36&gt;</span></span>
+</p>
+
+
+
+<ul class="org-ul">
+<li>Reading for QAECO reading group</li>
+<li>relationship between increasing number of species and increasing area of habitat
+<ul class="org-ul">
+<li>(so I suppose inverse is true, e.g. climate change reduce area of habitat, reduce number of species?)</li>
+<li>predict number of extinctions due to loss of habitat</li>
+</ul></li>
+<li>the issue is fragmentation
+<ul class="org-ul">
+<li>habitat loss generally results in a fragmented (sub) habitat</li>
+<li>SAR assumes contiguous regions (think a circle getting smaller)</li>
+<li>fragmentation is when holes appear (think a doughnut)</li>
+</ul></li>
+<li>(meta) population capacity is essentially the carrying capacity of the habitat</li>
+<li>fragmentation causes this to decline
+<ul class="org-ul">
+<li>e.g. due to disconnect between fragments</li>
+</ul></li>
+<li>SFAR (species-fragmented area relationship) fits better than SAR in simulations</li>
+<li>Figure 1
+<ul class="org-ul">
+<li>the authors suggest the SAR does not fit the number of species well, but it looks like it does to me? The lines are pretty close to the points?</li>
+<li>I think perhaps the figure legend is not described well &#x2014; the lines are not SARs but just general fitted lines?</li>
+</ul></li>
+<li>Species traits
+<ul class="org-ul">
+<li>when including the fragmentation part, the authors suggest a large amount of variation in the ratio of extinction and colonisation</li>
+<li>this has an effect on their \(b\) parameter</li>
+<li>how are the models fit? stupid pnas, need to check in supplementary material</li>
+</ul></li>
+<li>Case study uses only 14 points</li>
+<li>they suggest that species number is reduced due to fragmentation</li>
+<li>a better visualisation would be to use points proportional to \(\lambda\) in Figure 4A</li>
+<li>They suggest hat SFAR is better than SAR, due to a difference in AICc of 2.44 (!)</li>
+<li>furthermore, the least-squares value of the area coefficient is negative, meaning that conditional on \(\lambda\), the number of species \(S\) is <i>increasing</i> as area \(A\) decreases
+<ul class="org-ul">
+<li><b>what</b>!?</li>
+<li>this same thing happens in eqn 3, where if \(z < 0\), if \(A_{\text{new}} < A\), $S<sub>\text{new}</sub>/S &gt;1 $!</li>
+</ul></li>
+<li>they do discuss what they term <i>hidden</i> parameters: those used for estimating \(\lambda\)
+<ul class="org-ul">
+<li>perhaps these should be estimated in a hierarchical model?</li>
+</ul></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
