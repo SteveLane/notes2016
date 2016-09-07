@@ -1,0 +1,38 @@
+---
+layout: post
+title: Voting for model selection
+description: 
+tags: model-selection
+categories: 
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Notes</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Objective function for voting model selection</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-14 Tue 11:43&gt;</span></span>
+</p>
+<ul class="org-ul">
+<li>The objective function is to minimise the average cv error
+<ul class="org-ul">
+<li>This is because we want to minimise MSE (or some other statistic) on an <i>unseen</i> dataset</li>
+</ul></li>
+<li>However, mean-CV error is just an estimate of MSE due to the resampling used</li>
+<li>So, do we believe that argmin mean-CV is the best way to choose &lambda;
+<ul class="org-ul">
+<li>(or some other model feature)</li>
+</ul></li>
+<li>How about if we want the &lambda; that is most popular
+<ul class="org-ul">
+<li>That is, the one which would be optimal most of the time</li>
+<li>Do they converge to each other in the limit?</li>
+<li>Like saying we want the &lambda; that results in the most lowest-MSEs in new, <i>unseen</i> data, not just averages them</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
