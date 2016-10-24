@@ -1,0 +1,69 @@
+---
+layout: post
+title: Reading notes
+description: Notes from research readings
+tags: surveillance aggregation
+categories: generic
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Readings</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">An improved cumulative sum-based procedure for prospective disease surveillance for count data in multiple regions</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-10-24 Mon 16:23&gt;</span></span>
+</p>
+
+<p>
+Dassanayake, S., &amp; French, J. P. (2016). An improved cumulative sum-based procedure for prospective disease surveillance for count data in multiple regions. Statistics in Medicine. <a href="https://doi.org/10.1002/sim.6887">https://doi.org/10.1002/sim.6887</a>
+</p>
+
+<ul class="org-ul">
+<li>Cumulative counts are created from neighbouring areas for monitoring/detecting diseases outbreaks</li>
+<li>prospective surveillance
+<ul class="org-ul">
+<li>decisions made at regular intervals about incidence, c.f. analysing the whole dataset retrospectively</li>
+<li>so possible multiple comparisons issues?</li>
+</ul></li>
+<li>For CUSUM-based methods, the in-control distribution can be estimated via bootstrap
+<ul class="org-ul">
+<li>p-values for exceeding CUSUM threshold can then be calculated</li>
+<li>why p-values?</li>
+<li>is this another case for going Bayesian to get posterior probabilities</li>
+</ul></li>
+<li>Provides discussion on <i>standard</i> Poisson CUSUM
+<ul class="org-ul">
+<li>parameters controlling the process are calculated via average run length (ARL)</li>
+<li>ARL: desired average time between two false alarms when the process is 'in control'</li>
+<li>this seems to be a difficult concept to set a limit for</li>
+</ul></li>
+<li>spatial CUSUM modifies counts and control parameters by a weighted average of all counts
+<ul class="org-ul">
+<li>weights are based on the distance between areas</li>
+</ul></li>
+<li>Justification for the procedure is that p-values are preferred over test statistics
+<ul class="org-ul">
+<li>why? surely there's a one-to-one correspondence?</li>
+<li>false discovery rate is used for error control
+<ul class="org-ul">
+<li>this seems fine, but I'm not sure I understand the procedure fully</li>
+<li>FDR = 1 - PPV, which makes that point a bit clearer</li>
+</ul></li>
+</ul></li>
+<li>In the application, the authors use the first two years of data to estimate the in-control distribution
+<ul class="org-ul">
+<li>this is because '&#x2026; there were no unusually high disease counts reported from any of the states during this period'</li>
+<li>this is clearly problematic: is this the <i>eyeball</i> test</li>
+<li>the results will clearly depend on this choice, so a sensitivity analysis would be important</li>
+</ul></li>
+<li>I found this somewhat difficult to read overall
+<ul class="org-ul">
+<li>this could be due to my lack of knowledge in the area though!</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
