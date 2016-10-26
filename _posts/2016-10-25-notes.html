@@ -1,0 +1,67 @@
+---
+layout: post
+title: Research reading
+description: Notes from readings
+tags: bootstrap lmm
+categories: generic
+comments: true
+---
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Readings</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Delta method and bootstrap in linear mixed models to estimate a proportion when no event is observed: application to intralesional resection in bone tumor surgery</h3>
+<div class="outline-text-3" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-10-25 Tue 07:42&gt;</span></span>
+</p>
+
+<p>
+Francq, B. G., &amp; Cartiaux, O. (2016). Delta method and bootstrap in linear mixed models to estimate a proportion when no event is observed: application to intralesional resection in bone tumor surgery. Statistics in Medicine. <a href="https://doi.org/10.1002/sim.6939">https://doi.org/10.1002/sim.6939</a>
+</p>
+
+<ul class="org-ul">
+<li>Estimation of rare proportions
+<ul class="org-ul">
+<li>could be useful for my work</li>
+<li>I wonder how many zeroes can be in the data for this method to work
+<ul class="org-ul">
+<li>that will be my main question at the moment</li>
+</ul></li>
+</ul></li>
+<li>Give the example of adverse events in clinical trials
+<ul class="org-ul">
+<li>here, many adverse events will have 0 counts</li>
+</ul></li>
+<li>Provide a toy example of estimating probabilities of height thresholds in small samples
+<ul class="org-ul">
+<li>expect different probabilities from different thresholds</li>
+<li>clearly due to ordering of heights</li>
+</ul></li>
+<li>the problem with the existing methods is that they give the same interval for different thresholds
+<ul class="org-ul">
+<li>e.g. when when two observations fall below a threshold
+<ul class="org-ul">
+<li>here they have different values, but give a 0 value anyway</li>
+<li>so they should have different intervals due to the different values</li>
+</ul></li>
+</ul></li>
+<li>first extension is the delta method on the z-score
+<ul class="org-ul">
+<li>using the observed values, calculate sample mean and sd, and z-score</li>
+<li>find variance of the z-score using delta method</li>
+<li>then confidence interval of z-score gets transformed for the probability confidence interval</li>
+</ul></li>
+<li>can also be used on the cdf of z
+<ul class="org-ul">
+<li>this has problems with intervals though</li>
+</ul></li>
+<li>standard nonparametric bootstrap doesn't work
+<ul class="org-ul">
+<li>if you have no events, none will be in the bootstrap resamples!</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
